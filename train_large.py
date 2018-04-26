@@ -14,10 +14,10 @@ def train():
     tb = TensorBoard(log_dir=os.path.join('logs'))
     checkpoint= ModelCheckpoint(filepath=os.path.join('checkpoints','lstm-best.hdf5'),verbose=1,save_best_only=True)
     early_stopper = EarlyStopping(patience=20)
-    cep_num= 13
-    tot_vals=None
+    cep_num= 26
+    tot_vals=1290
     batchsize=10
-    epochs= 100
+    epochs= 1000
     dnn_model = lstm_model(nb_categories,tot_vals,cep_num)
     model= dnn_model.getmodel()
     X_test,y_test = datamodel.load_all_in_memory(datamodel.testlist)

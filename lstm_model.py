@@ -10,12 +10,11 @@ import time
 class lstm_model():
     def __init__(self,nb_categories,tot_vals,cep_num):
         self.nb_categories=nb_categories
-        self.sequence_shape=(tot_vals,cep_num)
+        self.sequence_shape=(cep_num,tot_vals)
         self.model= Sequential()
-        optimizer = Adam(lr=1e-4, decay=1e-4)
+        optimizer = Adam(lr=1e-5, decay=1e-6)
+        self.model.add(LSTM(512,return_sequences=True,input_shape=self.sequence_shape,dropout=0.5))
         self.model.add(LSTM(512,return_sequences=False,input_shape=self.sequence_shape,dropout=0.5))
-        self.model.add(Dense(64, activation='relu'))
-        self.model.add(Dropout(0.5))
         self.model.add(Dense(nb_categories, activation='softmax'))
         self.model.compile(loss='categorical_crossentropy', optimizer=optimizer,metrics=['accuracy'])
         print(self.model.summary())

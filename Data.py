@@ -4,6 +4,7 @@ from python_speech_features import mfcc
 from split_list import getclasses,category_to_digit,digit_to_category,make_split
 from keras.utils import to_categorical
 import scipy.io.wavfile as wav
+import librosa
 import os
 class Data():
     all_classes=None
@@ -37,8 +38,8 @@ class Data():
         X=[]
         y=[]
         for each_file in listname:
-            (rate,sig) = wav.read(each_file[0]);
-            mfcc_feat = mfcc(sig,rate)[:2985,:];
+            (sig,rate) = librosa.load(each_file[0]);
+            mfcc_feat =librosa.feature.mfcc(sig,rate,n_mfcc=26)[,:1290];
             #print(mfcc_feat.shape,type(mfcc_feat))
             X.append(mfcc_feat)
             y.append(to_categorical(each_file[1],self.class_num).squeeze())
