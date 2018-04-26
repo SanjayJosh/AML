@@ -1,0 +1,83 @@
+2018-04-26 03:50:53.607716: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-26 03:50:53.607948: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-26 03:50:53.607966: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-26 03:50:53.607973: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-04-26 03:50:53.607979: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+DS Store deleted.
+10
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+lstm_1 (LSTM)                (None, 256)               276480    
+_________________________________________________________________
+dense_1 (Dense)              (None, 64)                16448     
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 64)                0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 10)                650       
+=================================================================
+Total params: 293,578
+Trainable params: 293,578
+Non-trainable params: 0
+_________________________________________________________________
+None
+(40, 6610, 13) (40, 10)
+(80, 6610, 13) (80, 10)
+Train on 80 samples, validate on 40 samples
+Epoch 1/100
+
+40/80 [==============>...............] - ETA: 16s - loss: 2.4385 - acc: 0.0750
+80/80 [==============================] - 33s 414ms/step - loss: 2.4869 - acc: 0.1250 - val_loss: 2.4764 - val_acc: 0.1000
+
+Epoch 00001: val_loss improved from inf to 2.47643, saving model to checkpoints/lstm-best.hdf5
+Epoch 2/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.4125 - acc: 0.1750
+80/80 [==============================] - 31s 389ms/step - loss: 2.4750 - acc: 0.1500 - val_loss: 2.4268 - val_acc: 0.1000
+
+Epoch 00002: val_loss improved from 2.47643 to 2.42676, saving model to checkpoints/lstm-best.hdf5
+Epoch 3/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.4418 - acc: 0.1000
+80/80 [==============================] - 30s 372ms/step - loss: 2.3999 - acc: 0.1500 - val_loss: 2.3737 - val_acc: 0.1250
+
+Epoch 00003: val_loss improved from 2.42676 to 2.37369, saving model to checkpoints/lstm-best.hdf5
+Epoch 4/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.5554 - acc: 0.0750
+80/80 [==============================] - 30s 370ms/step - loss: 2.4213 - acc: 0.1375 - val_loss: 2.3255 - val_acc: 0.1000
+
+Epoch 00004: val_loss improved from 2.37369 to 2.32547, saving model to checkpoints/lstm-best.hdf5
+Epoch 5/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.4149 - acc: 0.1250
+80/80 [==============================] - 30s 372ms/step - loss: 2.5000 - acc: 0.0875 - val_loss: 2.2903 - val_acc: 0.1750
+
+Epoch 00005: val_loss improved from 2.32547 to 2.29035, saving model to checkpoints/lstm-best.hdf5
+Epoch 6/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.3778 - acc: 0.1250
+80/80 [==============================] - 30s 380ms/step - loss: 2.3531 - acc: 0.1375 - val_loss: 2.2658 - val_acc: 0.1750
+
+Epoch 00006: val_loss improved from 2.29035 to 2.26578, saving model to checkpoints/lstm-best.hdf5
+Epoch 7/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.2816 - acc: 0.2250
+80/80 [==============================] - 30s 371ms/step - loss: 2.2349 - acc: 0.2250 - val_loss: 2.2403 - val_acc: 0.2250
+
+Epoch 00007: val_loss improved from 2.26578 to 2.24034, saving model to checkpoints/lstm-best.hdf5
+Epoch 8/100
+
+40/80 [==============>...............] - ETA: 12s - loss: 2.0825 - acc: 0.3000
+80/80 [==============================] - 29s 369ms/step - loss: 2.1321 - acc: 0.2500 - val_loss: 2.2226 - val_acc: 0.2250
+
+Epoch 00008: val_loss improved from 2.24034 to 2.22260, saving model to checkpoints/lstm-best.hdf5
+Epoch 9/100
+
+40/80 [==============>...............] - ETA: 13s - loss: 2.2472 - acc: 0.1750
+80/80 [==============================] - 31s 383ms/step - loss: 2.2546 - acc: 0.1625 - val_loss: 2.2096 - val_acc: 0.2000
+
+Epoch 00009: val_loss improved from 2.22260 to 2.20958, saving model to checkpoints/lstm-best.hdf5
+Epoch 10/100
+
+40/80 [==============>...............] - ETA: 14s - loss: 2.1230 - acc: 0.2500

@@ -16,7 +16,7 @@ class Data():
     testlist=None
     def __init__(self,isinit=False):
         if isinit == True:
-            self.trainfile,self.testfile=make_split(80,20,"00")
+            self.trainfile,self.testfile=make_split(80,20,"11")
         self.all_classes = getclasses()
         self.class_num = len(self.all_classes)
         self.class_dict = digit_to_category()

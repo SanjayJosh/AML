@@ -17,7 +17,7 @@ def train():
     cep_num= 13
     tot_vals=None
     batchsize=40
-    epochs= 13
+    epochs= 100
     dnn_model = lstm_model(nb_categories,tot_vals,cep_num)
     model= dnn_model.getmodel()
     X_test,y_test = datamodel.load_all_in_memory(datamodel.testlist)
