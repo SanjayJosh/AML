@@ -38,7 +38,7 @@ class Data():
         y=[]
         for each_file in listname:
             (rate,sig) = wav.read(each_file[0]);
-            mfcc_feat = mfcc(sig,10000)[:6610,:];
+            mfcc_feat = mfcc(sig,rate)[:2985,:];
             #print(mfcc_feat.shape,type(mfcc_feat))
             X.append(mfcc_feat)
             y.append(to_categorical(each_file[1],self.class_num).squeeze())

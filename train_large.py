@@ -16,7 +16,7 @@ def train():
     early_stopper = EarlyStopping(patience=20)
     cep_num= 13
     tot_vals=None
-    batchsize=40
+    batchsize=10
     epochs= 100
     dnn_model = lstm_model(nb_categories,tot_vals,cep_num)
     model= dnn_model.getmodel()

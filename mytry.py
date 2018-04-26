@@ -5,5 +5,5 @@ for i in os.listdir('dataset'):
 	for j in os.listdir(os.path.join('dataset',i)):
 		v=os.path.join('dataset',i,j)
 		(rate,sig) = wav.read(v);
-		mfcc_feat = mfcc(sig,10000);
-		print(mfcc_feat.shape)
+		mfcc_feat = mfcc(sig,rate);
+		print(rate,mfcc_feat.shape)

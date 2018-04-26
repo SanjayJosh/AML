@@ -12,8 +12,8 @@ class lstm_model():
         self.nb_categories=nb_categories
         self.sequence_shape=(tot_vals,cep_num)
         self.model= Sequential()
-        optimizer = Adam(lr=1e-3, decay=1e-4)
-        self.model.add(LSTM(256,return_sequences=False,input_shape=self.sequence_shape,dropout=0.5))
+        optimizer = Adam(lr=1e-4, decay=1e-4)
+        self.model.add(LSTM(512,return_sequences=False,input_shape=self.sequence_shape,dropout=0.5))
         self.model.add(Dense(64, activation='relu'))
         self.model.add(Dropout(0.5))
         self.model.add(Dense(nb_categories, activation='softmax'))
