@@ -1,7 +1,7 @@
 import csv
 import numpy as np
 from python_speech_features import mfcc
-from split_list import getclasses,category_to_digit,digit_to_category
+from split_list import getclasses,category_to_digit,digit_to_category,make_split
 from keras.utils import to_categorical
 import scipy.io.wavfile as wav
 import os
