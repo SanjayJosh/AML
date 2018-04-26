@@ -43,7 +43,7 @@ class Data():
             chrome=librosa.feature.chroma_stft(sig,rate)[:,:1290];
             # contrast=librosa.feature.spectral_contrast(sig,rate)[:,:1290];
             #print(mfcc_feat.shape,type(mfcc_feat))
-            X.append(np.concatenate((mfcc_feat,chrome)))
+            X.append(np.concatenate((mfcc_feat,chrome)).T)
             y.append(to_categorical(each_file[1],self.class_num).squeeze())
-        print(np.array(X).T.shape, np.array(y).shape)
-        return np.array(X).T, np.array(y)
+        print(np.array(X).shape, np.array(y).shape)
+        return np.array(X), np.array(y)
