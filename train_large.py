@@ -7,7 +7,7 @@ from utils import mac_remove_file
 import tensorflow as tf
 def train():
     mac_remove_file()
-    datamodel = Data(False)
+    datamodel = Data(True)
     datamodel.make_path_lists()
     nb_categories=datamodel.class_num
     print(nb_categories)
