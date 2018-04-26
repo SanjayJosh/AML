@@ -39,7 +39,7 @@ class Data():
         y=[]
         for each_file in listname:
             (sig,rate) = librosa.load(each_file[0]);
-            mfcc_feat =librosa.feature.mfcc(sig,rate,n_mfcc=26)[,:1290];
+            mfcc_feat =librosa.feature.mfcc(sig,rate,n_mfcc=26)[:,:1290];
             #print(mfcc_feat.shape,type(mfcc_feat))
             X.append(mfcc_feat)
             y.append(to_categorical(each_file[1],self.class_num).squeeze())
