@@ -14,7 +14,7 @@ def train():
     tb = TensorBoard(log_dir=os.path.join('logs'))
     checkpoint= ModelCheckpoint(filepath=os.path.join('checkpoints','lstm-best.hdf5'),verbose=1,save_best_only=True)
     early_stopper = EarlyStopping(patience=20)
-    cep_num= 26
+    cep_num= 38
     tot_vals=1290
     batchsize=10
     epochs= 1000

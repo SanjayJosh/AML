@@ -7,4 +7,6 @@ for i in os.listdir('dataset'):
 		v=os.path.join('dataset',i,j)
 		(sig,rate) = librosa.load(v);
 		mfcc_feat = librosa.feature.mfcc(sig,rate,n_mfcc=26);
-		print(rate,mfcc_feat.shape)
+		chrome=librosa.feature.chroma_stft(sig,rate)
+		contrast=librosa.feature.spectral_contrast(sig,rate)
+		print(rate,mfcc_feat.shape,chrome.shape,contrast.shape)
