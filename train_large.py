@@ -14,8 +14,8 @@ def train():
     tb = TensorBoard(log_dir=os.path.join('logs'))
     checkpoint= ModelCheckpoint(filepath=os.path.join('checkpoints','lstm-best.hdf5'),verbose=1,save_best_only=True)
     early_stopper = EarlyStopping(patience=20)
-    cep_num= 38
-    tot_vals=1290
+    cep_num= 45
+    tot_vals=1024
     batchsize=10
     epochs= 1000
     dnn_model = lstm_model(nb_categories,tot_vals,cep_num)

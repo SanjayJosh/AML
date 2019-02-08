@@ -1,9 +1,9 @@
 import csv
 import numpy as np
-from python_speech_features import mfcc
+#from python_speech_features import mfcc
 from split_list import getclasses,category_to_digit,digit_to_category,make_split
 from keras.utils import to_categorical
-import scipy.io.wavfile as wav
+#import scipy.io.wavfile as wav
 import librosa
 import os
 class Data():
@@ -39,11 +39,12 @@ class Data():
         y=[]
         for each_file in listname:
             (sig,rate) = librosa.load(each_file[0]);
-            mfcc_feat =librosa.feature.mfcc(sig,rate,n_mfcc=26)[:,:1290];
-            chrome=librosa.feature.chroma_stft(sig,rate)[:,:1290];
+            mfcc_feat =librosa.feature.mfcc(sig,rate,n_mfcc=26)[:,:1024];
+            chrome=librosa.feature.chroma_stft(sig,rate)[:,:1024];
+            spectral_contrast=librosa.feature.spectral_contrast(sig,rate)[:,:1024]
             # contrast=librosa.feature.spectral_contrast(sig,rate)[:,:1290];
             #print(mfcc_feat.shape,type(mfcc_feat))
-            X.append(np.concatenate((mfcc_feat,chrome)).T)
+            X.append(np.concatenate((mfcc_feat,chrome,spectral_contrast)).T)
             y.append(to_categorical(each_file[1],self.class_num).squeeze())
         print(np.array(X).shape, np.array(y).shape)
         return np.array(X), np.array(y)
